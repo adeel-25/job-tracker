@@ -2,7 +2,7 @@ CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   email VARCHAR(255) UNIQUE NOT NULL,
   password_hash TEXT NOT NULL,
-  created_at TIMESTAMP DEFAULT NOW()
+  created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
 CREATE TABLE applications (
@@ -15,5 +15,5 @@ CREATE TABLE applications (
     CHECK (status IN ('Saved', 'Applied', 'Interview', 'Offer', 'Rejected')),
   date_applied DATE,
   notes TEXT,
-  created_at TIMESTAMP DEFAULT NOW()
+  created_at TIMESTAMPTZ DEFAULT NOW()
 );
